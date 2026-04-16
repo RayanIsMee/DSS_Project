@@ -28,6 +28,10 @@
                     </h1>
                     <p class="sub-title">OFFICIAL SCHEDULE DOCUMENT</p>
                 </div>
+                  <div class="main-header">
+                     <a href="/" class="btn">⬅ Retour à la recherche</a>
+                </div>
+
 
                 <div class="container">
 
