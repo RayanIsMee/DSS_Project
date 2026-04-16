@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', Georgia, serif;
+    background: #fdfbf7;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* HEADER INFO */
+.header-info {
+    text-align: center;
+    color: #000;
+    margin-bottom: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* TITLE */
+.main-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.big-title {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #111;
+    text-transform: uppercase;
+}
+
+.big-title span {
+    color: #8a8787;
+}
+
+.sub-title {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 3px;
+    margin-top: 8px;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 14px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+/* LINE HEADER */
+.line-title {
+    background: #111;
+    color: white;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.line-badge {
+    background: #8a8787;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.line-route {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* TRIP HEADER */
+.trip-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: #fafafa;
+    align-items: center;
+}
+
+.trip-code {
+    background: #8a8787;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* 📅 DAYS */
+.days-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.calendar-icon {
+    font-size: 11px;
+    background: #f0f0f0;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.day-pill {
+    background: #eee;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    text-transform: lowercase;
+}
+
+/* ⏱️ TIME STYLE (🔥 AJOUT IMPORTANT) */
+.time-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f5f5f5;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.time-dep {
+    color: #2e7d32; /* vert */
+}
+
+.time-sep {
+    color: #999;
+    font-size: 12px;
+}
+
+.time-arr {
+    color: #c62828; /* rouge */
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #111;
+    color: #fff;
+    padding: 12px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover td {
+    background: #faf7f5;
+}
+
+/* ALIGNEMENT */
+th:nth-child(4),
+td.price {
+    width: 160px;
+    text-align: right;
+    padding-right: 50px;
+}
+
+th:nth-child(5),
+td:last-child {
+    width: 140px;
+}
+
+/* PRICE */
+.amount {
+    color: #1b5e20;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.amount.vip {
+    color: #c62828;
+}
+
+.currency {
+    color: #888;
+    font-size: 11px;
+    margin-left: 4px;
+}
+
+/* BUTTON */
+button,
+.btn {
+    background: #8a8787 !important;
+    color: #fff !important;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+button:hover,
+.btn:hover {
+    background: #9e9e9e !important;
+}
+
+/* TRAIN */
+.train-badge {
+    background: #eeeeee;
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* CLASS */
+.class-badge {
+    background: #d5d9db;
+    color: #2f4d70;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* VIP */
+.vip-badge {
+    background: #f3e5d0;
+    color: #a85a00;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
