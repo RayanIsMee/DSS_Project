@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Railway System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="main-header">
+        <h1 class="big-title">TRAIN <span>SERVICE</span></h1>
+        <p class="sub-title">RAILWAY MANAGEMENT SYSTEM</p>
+    </div>
+
+    <!-- 🔍 SEARCH -->
+    <div class="card" style="padding:25px;">
+        <form method="POST">
+
+            <input type="text" name="code" placeholder="Trip Code">
+            <input type="text" name="departure" placeholder="Departure">
+            <input type="text" name="arrival" placeholder="Arrival">
+            <input type="text" name="type" placeholder="Train Type">
+            <input type="number" name="price" placeholder="Max Price">
+
+            <br><br>
+
+            <button type="submit">🔍 Search</button>
+        </form>
+    </div>
+
+    <!-- 🎯 RESULT -->
+    {% if trip %}
+    <div class="card" style="padding:20px;">
+        <p>{{ trip.code }} | {{ trip.type }}</p>
+        <p>{{ trip.departure }} → {{ trip.arrival }}</p>
+        <p>{{ trip.time_dep }} → {{ trip.time_arr }}</p>
+    </div>
+    {% endif %}
+
+    {% if trips %}
+    <div class="card">
+        <table>
+            <tr>
+                <th>Code</th>
+                <th>Type</th>
+                <th>Route</th>
+                <th>Time</th>
+                <th>Price</th>
+            </tr>
+
+            {% for t in trips %}
+            <tr>
+                <td>{{ t.code }}</td>
+                <td>{{ t.type }}</td>
+                <td>{{ t.departure }} → {{ t.arrival }}</td>
+                <td>{{ t.time_dep }} → {{ t.time_arr }}</td>
+                <td>{{ t.price }} DA</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+
+    <!-- 📄 VIEW ALL -->
+    <div style="text-align:center; margin-top:30px;">
+        <a href="/transport.xml" class="btn">📄 Voir tous les trajets</a>
+    </div>
+
+</div>
+
+</body>
+</html>
