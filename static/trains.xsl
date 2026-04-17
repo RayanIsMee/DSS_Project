@@ -21,6 +21,7 @@
                     Groupe : 08
                 </div>
 
+
                 <!-- TITLE -->
                 <div class="main-header">
                     <h1 class="big-title">
@@ -28,8 +29,8 @@
                     </h1>
                     <p class="sub-title">OFFICIAL SCHEDULE DOCUMENT</p>
                 </div>
-                  <div class="main-header">
-                     <a href="/" class="btn">⬅ Retour à la recherche</a>
+                <div style="text-align:center; margin-bottom:20px;">
+                   <a href="/" class="btn">🔍 Rechercher un trajet</a>
                 </div>
 
 
@@ -219,3 +220,4 @@
     </xsl:template>
 
 </xsl:stylesheet>
+
