@@ -15,24 +15,41 @@
         <p class="sub-title">RAILWAY MANAGEMENT SYSTEM</p>
     </div>
 
-
     <!-- 🔍 SEARCH -->
     <div class="card" style="padding:25px;">
         <form method="POST">
 
             <input type="text" name="code" placeholder="Trip Code">
-            <input type="text" name="departure" placeholder="Departure">
-            <input type="text" name="arrival" placeholder="Arrival">
-            <input type="text" name="type" placeholder="Train Type">
+
+            <!-- stations -->
+            <input list="stations" name="departure" placeholder="Departure">
+            <input list="stations" name="arrival" placeholder="Arrival">
+
+            <datalist id="stations">
+                {% for s in stations %}
+                    <option value="{{ s }}">
+                {% endfor %}
+            </datalist>
+
+            <!-- types -->
+            <input list="types" name="type" placeholder="Train Type">
+
+            <datalist id="types">
+                {% for t in types %}
+                    <option value="{{ t }}">
+                {% endfor %}
+            </datalist>
+
             <input type="number" name="price" placeholder="Max Price">
 
             <br><br>
 
             <button type="submit">🔍 Search</button>
+
         </form>
     </div>
 
-    <!-- 🎯 RESULT -->
+    <!-- RESULT SINGLE -->
     {% if trip %}
     <div class="card" style="padding:20px;">
         <p>{{ trip.code }} | {{ trip.type }}</p>
@@ -41,6 +58,7 @@
     </div>
     {% endif %}
 
+    <!-- RESULT MULTIPLE -->
     {% if trips %}
     <div class="card">
         <table>
@@ -65,7 +83,7 @@
     </div>
     {% endif %}
 
-    <!-- 📄 VIEW ALL -->
+    <!-- VIEW XML -->
     <div style="text-align:center; margin-top:30px;">
         <a href="/transport.xml" class="btn">📄 Voir tous les trajets</a>
     </div>
