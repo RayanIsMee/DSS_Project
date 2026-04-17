@@ -29,6 +29,34 @@ def get_station_name(root, station_id):
     return station_id
 
 # ======================
+# GET ALL STATIONS
+# ======================
+def get_all_stations():
+    tree = load_tree()
+    root = tree.getroot()
+
+    stations = []
+    for s in root.find('stations'):
+        stations.append(s.get('name'))
+
+    return stations
+
+# ======================
+# GET ALL TYPES
+# ======================
+def get_all_types():
+    tree = load_tree()
+    root = tree.getroot()
+
+    types = set()
+
+    for line in root.find('lines'):
+        for trip in line.find('trips'):
+            types.add(trip.get('type'))
+
+    return list(types)
+
+# ======================
 # SEARCH BY CODE
 # ======================
 def get_trip_by_code(code):
@@ -112,6 +140,9 @@ def index():
     trips = []
     trip = None
 
+    stations = get_all_stations()
+    types = get_all_types()
+
     if request.method == 'POST':
         code = request.form.get('code')
         departure = request.form.get('departure')
@@ -124,7 +155,13 @@ def index():
         else:
             trips = filter_trips(departure, arrival, train_type, max_price)
 
-    return render_template('index.html', trips=trips, trip=trip)
+    return render_template(
+        'index.html',
+        trips=trips,
+        trip=trip,
+        stations=stations,
+        types=types
+    )
 
 # ======================
 # RUN
